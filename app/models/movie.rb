@@ -35,8 +35,8 @@ class Movie < ActiveRecord::Base
         self.update(value)
     end
 
-    def self.update_all_titles(value)
-        Movie.update_all("title = ?", value)
+    def self.update_all_titles(title)
+        Movie.update(:title => title)
     end
 
     def self.delete_by_id(id)
